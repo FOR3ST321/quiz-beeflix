@@ -12,8 +12,52 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        {{ $episodes->links() }}
+    <div class="container-fluid" style="margin-top: 20px">
+        <h4>Beeflix</h4>
+
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="/" class="btn btn-secondary">
+                < Kembali </a>
+                    <a href="/" class="btn btn-light">Lihat Semua Film</a>
+        </div>
+        <div class="card card-primary card-outline" style="margin-top: 30px;background-color:#e7e7e7">
+            <div class="card-body">
+                <div class="d-flex">
+                    <img src="<?= $movie->photo ?>" style="max-height: 400px">
+                    <div class="container" style="width: 33vw">
+                        <h4><?= $movie->title ?></h4>
+                        <p>
+                            <strong>Rating: <?= $movie->rating ?></strong> <br>
+                            <?= $movie->description ?> <br>
+                            Category: <a href="/category/<?= $movie->genre_id ?>"><?= $movie->genre->name ?></a>
+                        </p>
+                    </div>
+                    <div class="container" style="width: 33vw">
+                        <h4>EPISODE</h4>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr style="background-color: white">
+                                    <td>Episode</td>
+                                    <td>Title</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($episodes as $item)
+                                    <tr>
+                                        <td><?= $item->episode ?></td>
+                                        <td><?= $item->title ?></td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+
+                        <div class="d-flex justify-content-start" style="margin-top: 20px;">
+                            {{$episodes->links()}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
