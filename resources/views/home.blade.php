@@ -20,7 +20,7 @@
             <div class="card" style="margin-top:5vh">
                 <div class="card-header">
                     <h5 class="card-title">
-                        <?= $g->name ?>
+                        {{ $g->name }}
                     </h5>
                 </div>
                 <div class="card-body">
@@ -29,9 +29,9 @@
                             @if ($m->genre_id == $g->id)
                                 <div class="col-3">
                                     <div class="d-flex flex-column ">
-                                        <img src="<?= $m->photo ?>" class="img-fluid" alt="Responsive image">
-                                        <p class="text-center"><?= $m->title ?></p>
-                                        <a href="./movie/<?= $m->id ?>" class="btn text-center"
+                                        <img src="{{ $m->photo }}" class="img-fluid" alt="Responsive image">
+                                        <p class="text-center">{{ $m->title }}</p>
+                                        <a href="./movie/{{ $m->id }}" class="btn text-center"
                                             style="background-color: #423d3d;color:white">
                                             LIHAT FILM
                                         </a>

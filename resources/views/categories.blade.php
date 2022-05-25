@@ -9,7 +9,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
-    <title>Categories | <?= $category->name ?></title>
+    <title>Categories | {{ $category->name }}</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         <div class="card" style="margin-top:5vh">
             <div class="card-header">
                 <h5 class="card-title">
-                    <?= $category->name ?>
+                    {{ $category->name }}
                 </h5>
             </div>
             <div class="card-body">
@@ -33,9 +33,9 @@
                     @foreach ($movie as $m)
                         <div class="col-3">
                             <div class="d-flex flex-column ">
-                                <img src="<?= $m->photo ?>" class="img-fluid" alt="Responsive image">
-                                <p class="text-center"><?= $m->title ?></p>
-                                <a href="./movie/<?= $m->id ?>" class="btn text-center"
+                                <img src="{{ $m->photo }}" class="img-fluid" alt="Responsive image">
+                                <p class="text-center">{{ $m->title }}</p>
+                                <a href="./movie/{{ $m->id }}" class="btn text-center"
                                     style="background-color: #423d3d;color:white">
                                     LIHAT FILM
                                 </a>
