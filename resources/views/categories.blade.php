@@ -35,7 +35,7 @@
                             <div class="d-flex flex-column ">
                                 <img src="{{ $m->photo }}" class="img-fluid" alt="Responsive image">
                                 <p class="text-center">{{ $m->title }}</p>
-                                <a href="./movie/{{ $m->id }}" class="btn text-center"
+                                <a href="/movie/{{ $m->id }}" class="btn text-center"
                                     style="background-color: #423d3d;color:white">
                                     LIHAT FILM
                                 </a>
