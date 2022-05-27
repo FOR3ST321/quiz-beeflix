@@ -13,11 +13,14 @@
 </head>
 
 <body>
+    <div class="container-fluid" style="background-color: #d89f3e;height:5vh">
+        <h2 class="text-center">Beeflix</h2>
+    </div>
     <div class="container-fluid" style="margin-top: 2vh">
-        <h4>Beeflix</h4>
+        
 
         <div class="btn-group" role="group" aria-label="Basic example">
-            <a href="/" class="btn btn-secondary">
+            <a href="{{ url()->previous() }}" class="btn btn-secondary">
                 < Kembali </a>
             <a href="/"  class="btn btn-light">Lihat Semua Film</a>
         </div>
@@ -33,7 +36,7 @@
                     @foreach ($movie as $m)
                         <div class="col-3">
                             <div class="d-flex flex-column ">
-                                <img src="{{ $m->photo }}" class="img-fluid" alt="Responsive image">
+                                <img src="{{ $m->photo }}" class="img-fluid" alt="Responsive image" style="height: 470px">
                                 <p class="text-center">{{ $m->title }}</p>
                                 <a href="/movie/{{ $m->id }}" class="btn text-center"
                                     style="background-color: #423d3d;color:white">

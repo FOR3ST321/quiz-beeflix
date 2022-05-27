@@ -8,28 +8,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Beeflix | {{$movie->title }}</title>
+    <title>Beeflix | {{ $movie->title }}</title>
 </head>
 
 <body>
+    <div class="container-fluid" style="background-color: #d89f3e;height:5vh">
+        <h2 class="text-center">Beeflix</h2>
+    </div>
     <div class="container-fluid" style="margin-top: 20px">
-        <h4>Beeflix</h4>
+
 
         <div class="btn-group" role="group" aria-label="Basic example">
-            <a href="/" class="btn btn-secondary">
+            <a href="{{ url()->previous() }}" class="btn btn-secondary">
                 < Kembali </a>
                     <a href="/" class="btn btn-light">Lihat Semua Film</a>
         </div>
         <div class="card card-primary card-outline" style="margin-top: 30px;background-color:#e7e7e7">
             <div class="card-body">
                 <div class="d-flex">
-                    <img src="{{$movie->photo }}" style="max-height: 400px">
+                    <img src="{{ $movie->photo }}" style="max-height: 400px">
                     <div class="container" style="width: 33vw">
-                        <h4>{{$movie->title }}</h4>
+                        <h4>{{ $movie->title }}</h4>
                         <p>
-                            <strong>Rating: {{$movie->rating }}</strong> <br>
-                            {{$movie->description }} <br>
-                            Category: <a href="/category/{{$movie->genre_id }}">{{$movie->genre->name }}</a>
+                            <strong>Rating: {{ $movie->rating }}</strong> <br>
+                            {{ $movie->description }} <br>
+                            Category: <a href="/category/{{ $movie->genre_id }}">{{ $movie->genre->name }}</a>
                         </p>
                     </div>
                     <div class="container" style="width: 33vw">
@@ -44,15 +47,15 @@
                             <tbody>
                                 @foreach ($episodes as $item)
                                     <tr>
-                                        <td>{{$item->episode }}</td>
-                                        <td>{{$item->title}}</td>
+                                        <td>{{ $item->episode }}</td>
+                                        <td>{{ $item->title }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
 
                         <div class="d-flex justify-content-start" style="margin-top: 20px;">
-                            {{$episodes->links()}}
+                            {{ $episodes->links() }}
                         </div>
                     </div>
                 </div>
